@@ -92,6 +92,7 @@ function! vader#run(bang, ...) range
     call vader#window#cleanup()
 
     let g:vader_report = join(getline(1, '$'), "\n")
+    call writefile(getline(1, '$'), "report.log")
     let g:vader_errors = qfl
     call setqflist(qfl)
 
